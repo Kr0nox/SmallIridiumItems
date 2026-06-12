@@ -1,8 +1,8 @@
 interface MockBlockType {
   type: string
   id: string
-  next?: {block: MockBlockType},
-  fields: Record<string, number>
+  next?: { block: MockBlockType }
+  fields?: Record<string, number>
 }
 
 export interface LoopBlockType extends MockBlockType {
@@ -16,8 +16,8 @@ export interface LoopBlockType extends MockBlockType {
 export type MockBlock = MockBlockType | LoopBlockType
 
 export interface BlocklyJsonMock {
-  blocks: {
+  blocks?: {
     languageVersion: number
-    blocks: MockBlock[]
+    blocks?: MockBlock[]
   }
 }

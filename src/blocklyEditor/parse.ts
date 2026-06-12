@@ -2,15 +2,14 @@ import type { BlocklyJsonMock, LoopBlockType, MockBlock } from './outputMock'
 import type { ItemLoop, Node, RepeatLoop } from '@/model/StrategyLanguage'
 
 export function parse(blocklyJson: BlocklyJsonMock): Node[] {
-
-  return blocklyJson.blocks.blocks.map(parseBlocklyNode).filter(n => n !== undefined)
+  if (!blocklyJson.blocks || !blocklyJson.blocks.blocks) return []
+  return blocklyJson.blocks.blocks.map(parseBlocklyNode).filter((n) => n !== undefined)
 }
 
-function parseBlocklyNode(blocklyNode: MockBlock): Node|undefined {
-
+function parseBlocklyNode(blocklyNode: MockBlock): Node | undefined {
   let cur: MockBlock | undefined = blocklyNode
-  let last: Node|undefined
-  let first: Node|undefined
+  let last: Node | undefined
+  let first: Node | undefined
   while (cur !== undefined) {
     const newNode = parseSingleNode(cur)
 
@@ -44,7 +43,7 @@ function parseSingleNode(blocklyNode: MockBlock): Node {
     case 'add_hay':
       return {
         type: 'feed',
-        hay: blocklyNode.fields['AMOUNT']
+        hay: blocklyNode.fields!['AMOUNT']
       }
     case 'take_profession':
       return {
@@ -53,6 +52,10 @@ function parseSingleNode(blocklyNode: MockBlock): Node {
     case 'remove_profession':
       return {
         type: 'removeProfession'
+      }
+    case 'sleep':
+      return {
+        type: 'sleep'
       }
     /*case 'loop_repeat_n':
       return {
@@ -64,25 +67,25 @@ function parseSingleNode(blocklyNode: MockBlock): Node {
       return {
         type: 'itemLoop',
         limit: blocklyLoop.fields['TARGET'],
-        do: 
+        do:
       }*/
   }
-  
+
   const blocklyLoop = blocklyNode as LoopBlockType
-  const loopedNodes = blocklyLoop.inputs ? parseBlocklyNode(blocklyLoop.inputs.DO.block): undefined
-  let loop: RepeatLoop|ItemLoop|undefined
+  const loopedNodes = blocklyLoop.inputs ? parseBlocklyNode(blocklyLoop.inputs.DO.block) : undefined
+  let loop: RepeatLoop | ItemLoop | undefined
   switch (blocklyLoop.type) {
     case 'loop_repeat_n':
       loop = {
         type: 'repeat',
-        n: blocklyLoop.fields['TIMES'],
+        n: blocklyLoop.fields!['TIMES'],
         do: loopedNodes
-      } 
+      }
       break
     case 'loop_until_items':
       loop = {
         type: 'itemLoop',
-        limit: blocklyLoop.fields['TARGET'],
+        limit: blocklyLoop.fields!['TARGET'],
         do: loopedNodes
       }
       break
@@ -94,10 +97,10 @@ function parseSingleNode(blocklyNode: MockBlock): Node {
   if (loop.do !== undefined) {
     let last = loop.do
     while (last.next !== undefined) {
-      last = loop.next!
+      last = last.next!
     }
     last.next = loop
   }
-  
+
   return loop
 }

@@ -1,0 +1,24 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "loop_repeat_n",
+        "id": "AX/]rQ{@OaeHPF6cZ){+",
+        "x": 59,
+        "y": 348,
+        "fields": {
+          "TIMES": 7
+        },
+        "inputs": {
+          "DO": {
+            "block": {
+              "type": "sleep",
+              "id": "b?),yhP1*l``vB4gqnMI"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

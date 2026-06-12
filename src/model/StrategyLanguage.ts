@@ -3,7 +3,9 @@ interface BaseNode<S extends string> {
   next?: Node
 }
 
-type DoAction = BaseNode<'placePetter' | 'removePetter' | 'pet' | 'sleep' | 'takeProfession' | 'removeProfession'>
+type DoAction = BaseNode<
+  'placePetter' | 'removePetter' | 'pet' | 'sleep' | 'takeProfession' | 'removeProfession'
+>
 
 export interface FeedAction extends BaseNode<'feed'> {
   hay: number
@@ -19,8 +21,9 @@ export interface ItemLoop extends Loop<'itemLoop'> {
 
 export interface RepeatLoop extends Loop<'repeat'> {
   n: number
+  counter?: number
 }
 
-export type LoopNodes = ItemLoop|RepeatLoop
+export type LoopNodes = ItemLoop | RepeatLoop
 
 export type Node = DoAction | FeedAction | ItemLoop | RepeatLoop

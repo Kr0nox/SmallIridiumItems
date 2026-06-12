@@ -1,13 +1,11 @@
-import {Blocks, type Block, FieldNumber} from 'blockly'
+import { Blocks, type Block, FieldNumber } from 'blockly'
 
 export function registerBlocks() {
-
   // ── Actions ──────────────────────────────────────────────────────────────
 
   Blocks['place_autopetter'] = {
     init(this: Block) {
-      this.appendDummyInput()
-        .appendField('Place Autopetter')
+      this.appendDummyInput().appendField('Place Autopetter')
       this.setPreviousStatement(true, null)
       this.setNextStatement(true, null)
       this.setColour(160)
@@ -17,8 +15,7 @@ export function registerBlocks() {
 
   Blocks['remove_autopetter'] = {
     init(this: Block) {
-      this.appendDummyInput()
-        .appendField('Remove Autopetter')
+      this.appendDummyInput().appendField('Remove Autopetter')
       this.setPreviousStatement(true, null)
       this.setNextStatement(true, null)
       this.setColour(160)
@@ -26,10 +23,19 @@ export function registerBlocks() {
     }
   }
 
+  Blocks['sleep'] = {
+    init(this: Block) {
+      this.appendDummyInput().appendField('Sleep')
+      this.setPreviousStatement(true, null)
+      this.setNextStatement(true, null)
+      this.setColour(160)
+      this.setTooltip('Sleep')
+    }
+  }
+
   Blocks['pet_manually'] = {
     init(this: Block) {
-      this.appendDummyInput()
-        .appendField('Pet Manually')
+      this.appendDummyInput().appendField('Pet Manually')
       this.setPreviousStatement(true, null)
       this.setNextStatement(true, null)
       this.setColour(160)
@@ -39,8 +45,7 @@ export function registerBlocks() {
 
   Blocks['take_profession'] = {
     init(this: Block) {
-      this.appendDummyInput()
-        .appendField('Take Profession')
+      this.appendDummyInput().appendField('Take Profession')
       this.setPreviousStatement(true, null)
       this.setNextStatement(true, null)
       this.setColour(160)
@@ -50,8 +55,7 @@ export function registerBlocks() {
 
   Blocks['remove_profession'] = {
     init(this: Block) {
-      this.appendDummyInput()
-        .appendField('Remove Profession')
+      this.appendDummyInput().appendField('Remove Profession')
       this.setPreviousStatement(true, null)
       this.setNextStatement(true, null)
       this.setColour(160)
@@ -80,8 +84,7 @@ export function registerBlocks() {
         .appendField('Repeat')
         .appendField(new FieldNumber(7, 1, Infinity, 1), 'TIMES')
         .appendField('times')
-      this.appendStatementInput('DO')
-        .appendField('do')
+      this.appendStatementInput('DO').appendField('do')
       this.setPreviousStatement(true, null)
       this.setNextStatement(true, null)
       this.setColour(120)
@@ -94,8 +97,7 @@ export function registerBlocks() {
       this.appendDummyInput()
         .appendField('Repeat until items ≥')
         .appendField(new FieldNumber(1998, 1, Infinity, 1), 'TARGET')
-      this.appendStatementInput('DO')
-        .appendField('do')
+      this.appendStatementInput('DO').appendField('do')
       this.setPreviousStatement(true, null)
       this.setNextStatement(true, null)
       this.setColour(120)

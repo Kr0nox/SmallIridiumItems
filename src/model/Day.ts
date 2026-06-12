@@ -4,4 +4,6 @@ export interface Day {
   friendship: number
   itemChance: number
   itemTotal: number
+  autoPetterPlaced: boolean
+  hayRemaining: number
 }
