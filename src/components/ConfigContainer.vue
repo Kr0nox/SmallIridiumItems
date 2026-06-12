@@ -29,7 +29,9 @@
           <input v-model.number="model.initialFriendship" type="number" />
         </span>
         <span>
-          <button @click="emit('run')">Run</button>
+          <ButtonComponent class="px-2" @click="emit('run')"
+            ><FontAwesomeIcon :icon="faPlay" /> Run</ButtonComponent
+          >
         </span>
       </div>
     </div>
@@ -37,8 +39,11 @@
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import ButtonComponent from './ButtonComponent.vue'
 import ContainerComponent from './ContainerComponent.vue'
 import type { Config } from '@/model/StrategyEvaluation'
+import { faPlay } from '@fortawesome/free-solid-svg-icons'
 
 const model = defineModel<Config>({
   required: true

@@ -2,8 +2,8 @@
   <ContainerComponent>
     <div v-if="results" class="flex h-full max-h-full w-full flex-col text-sm">
       <div class="result-row h-fit border-b border-purple-300">
-        <span>Day</span>
-        <span>Item Chance</span>
+        <span>Day ({{ results.length }} total)</span>
+        <span>Item Chance (avg: {{ (averageChance * 100).toFixed(2) }}%)</span>
         <span>Item Count</span>
         <span>Happiness</span>
         <span>Friendship</span>
@@ -21,7 +21,7 @@
         />
       </div>
     </div>
-    <div v-else>Loading</div>
+    <div v-else>No Results yet</div>
   </ContainerComponent>
 </template>
 
@@ -29,13 +29,19 @@
 import type { Day } from '@/model/Day.ts'
 import ContainerComponent from './ContainerComponent.vue'
 import ResultRow from './ResultRow.vue'
-import type { PropType } from 'vue'
+import { computed, type PropType } from 'vue'
 
-defineProps({
+const props = defineProps({
   results: {
     type: Object as PropType<Array<Day> | undefined>,
     required: true
   }
+})
+
+const averageChance = computed(() => {
+  if (!props.results) return 0
+  const sum = props.results.map((d) => d.itemChance).reduce((a, b) => a + b, 0)
+  return sum / props.results.length
 })
 </script>
 
@@ -54,7 +60,7 @@ defineProps({
 }
 
 .result-row span:nth-child(1) {
-  @apply w-16;
+  @apply w-32;
 }
 
 .result-row span:nth-child(3),
@@ -65,7 +71,7 @@ defineProps({
 }
 
 .result-row span:nth-child(2) {
-  @apply w-24;
+  @apply w-46;
 }
 
 .result-row span:nth-child(6) {

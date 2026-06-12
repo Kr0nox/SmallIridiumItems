@@ -1,0 +1,117 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "take_profession",
+        "id": "%SIdD6Bc81ohk|BT8Cj.",
+        "x": 66,
+        "y": 82,
+        "next": {
+          "block": {
+            "type": "add_hay",
+            "id": "83+jl{RJ^qr/+V467@$k",
+            "fields": {
+              "AMOUNT": 999
+            },
+            "next": {
+              "block": {
+                "type": "loop_repeat_n",
+                "id": "UupAN#7NS-;7d.yqzfZ;",
+                "fields": {
+                  "TIMES": 16
+                },
+                "inputs": {
+                  "DO": {
+                    "block": {
+                      "type": "sleep",
+                      "id": "hm4=`^+qOk7cEt1*oPlb",
+                      "next": {
+                        "block": {
+                          "type": "pet_manually",
+                          "id": "SKBSs0YiJUAZTHitWvt*"
+                        }
+                      }
+                    }
+                  }
+                },
+                "next": {
+                  "block": {
+                    "type": "place_autopetter",
+                    "id": "~CH}B73u=hI,4^toL9bP",
+                    "next": {
+                      "block": {
+                        "type": "loop_until_items",
+                        "id": "gRMxbD{KV0.}2?j?az!M",
+                        "fields": {
+                          "TARGET": 999
+                        },
+                        "inputs": {
+                          "DO": {
+                            "block": {
+                              "type": "add_hay",
+                              "id": "1x$]9opw-3k(c#*$3a+9",
+                              "fields": {
+                                "AMOUNT": 14
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "loop_repeat_n",
+                                  "id": "p#}[8(:qG9|u(49#oXy{",
+                                  "fields": {
+                                    "TIMES": 7
+                                  },
+                                  "inputs": {
+                                    "DO": {
+                                      "block": {
+                                        "type": "sleep",
+                                        "id": "k/v.Z/caItYl5#v6uhtI"
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "remove_autopetter",
+                                      "id": "A$pG@T5+e_}xmc?g?9$J",
+                                      "next": {
+                                        "block": {
+                                          "type": "loop_repeat_n",
+                                          "id": "n~%L{TQ5.B{JwwxsC[zP",
+                                          "fields": {
+                                            "TIMES": 7
+                                          },
+                                          "inputs": {
+                                            "DO": {
+                                              "block": {
+                                                "type": "sleep",
+                                                "id": "61Lj3#8A^Z3^;e9pyy%X"
+                                              }
+                                            }
+                                          },
+                                          "next": {
+                                            "block": {
+                                              "type": "place_autopetter",
+                                              "id": "{U%INm%Evm,2jm?4c8?."
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

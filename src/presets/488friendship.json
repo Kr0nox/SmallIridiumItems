@@ -1,0 +1,57 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "take_profession",
+        "id": "%SIdD6Bc81ohk|BT8Cj.",
+        "x": 66,
+        "y": 82,
+        "next": {
+          "block": {
+            "type": "add_hay",
+            "id": "83+jl{RJ^qr/+V467@$k",
+            "fields": {
+              "AMOUNT": 999
+            },
+            "next": {
+              "block": {
+                "type": "loop_repeat_n",
+                "id": "UupAN#7NS-;7d.yqzfZ;",
+                "fields": {
+                  "TIMES": 16
+                },
+                "inputs": {
+                  "DO": {
+                    "block": {
+                      "type": "sleep",
+                      "id": "hm4=`^+qOk7cEt1*oPlb",
+                      "next": {
+                        "block": {
+                          "type": "pet_manually",
+                          "id": "SKBSs0YiJUAZTHitWvt*"
+                        }
+                      }
+                    }
+                  }
+                },
+                "next": {
+                  "block": {
+                    "type": "place_autopetter",
+                    "id": "~CH}B73u=hI,4^toL9bP",
+                    "next": {
+                      "block": {
+                        "type": "sleep",
+                        "id": "Uz,?BGGe5`FU#Z`mYfbc"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

@@ -21,7 +21,7 @@
             <div
               v-for="p in Object.keys(presets)"
               :key="p"
-              class="cursor-pointer"
+              class="cursor-pointer pl-2"
               @click="loadPreset(p)"
             >
               {{ p }}
@@ -46,9 +46,10 @@ import type { BlocklyJsonMock } from '@/blocklyEditor/outputMock.ts'
 import ButtonComponent from './ButtonComponent.vue'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faFloppyDisk, faFolderOpen, faPaste } from '@fortawesome/free-solid-svg-icons'
-import SleepPreset from '@/presets/Sleep.json'
-import Sleep7Preset from '@/presets/Sleep_7.json'
-import Sleep100Preset from '@/presets/Sleep_100.json'
+import replace7Strategy from '@/presets/replace7.json'
+import replace13Strategy from '@/presets/replace13.json'
+import replaceDailyStrategy from '@/presets/replaceDaily.json'
+import friendship488Preset from '@/presets/488friendship.json'
 
 const emit = defineEmits(['onChange'])
 
@@ -88,8 +89,9 @@ onMounted(() => {
 
   workspace = inject(blocklyDiv.value, {
     toolbox,
-    scrollbars: true,
-    trashcan: true
+    scrollbars: false,
+    trashcan: true,
+    sounds: false
   })
   workspace.addChangeListener(() => {
     const json = serialization.workspaces.save(workspace!) as BlocklyJsonMock
@@ -155,9 +157,10 @@ function saveFile(filename = 'smallIridium.json'): void {
 }
 
 const presets: Record<string, BlocklyJsonMock> = {
-  Sleep: SleepPreset,
-  'Sleep 7': Sleep7Preset,
-  'Sleep 100': Sleep100Preset
+  '1 day cycle': replaceDailyStrategy,
+  '7 day cycle': replace7Strategy,
+  '13 day cycle': replace13Strategy,
+  '488 Friendship': friendship488Preset
 }
 
 function loadPreset(key: string) {
