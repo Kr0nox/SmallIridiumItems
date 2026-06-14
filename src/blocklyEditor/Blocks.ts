@@ -8,7 +8,7 @@ export function registerBlocks() {
       this.appendDummyInput().appendField('Place Autopetter')
       this.setPreviousStatement(true, null)
       this.setNextStatement(true, null)
-      this.setColour(160)
+      this.setColour(4)
       this.setTooltip('Places an autopetter')
     }
   }
@@ -18,7 +18,7 @@ export function registerBlocks() {
       this.appendDummyInput().appendField('Remove Autopetter')
       this.setPreviousStatement(true, null)
       this.setNextStatement(true, null)
-      this.setColour(160)
+      this.setColour(4)
       this.setTooltip('Removes an autopetter')
     }
   }
@@ -28,7 +28,7 @@ export function registerBlocks() {
       this.appendDummyInput().appendField('Sleep')
       this.setPreviousStatement(true, null)
       this.setNextStatement(true, null)
-      this.setColour(160)
+      this.setColour(228)
       this.setTooltip('Sleep')
     }
   }
@@ -38,7 +38,7 @@ export function registerBlocks() {
       this.appendDummyInput().appendField('Pet Manually')
       this.setPreviousStatement(true, null)
       this.setNextStatement(true, null)
-      this.setColour(160)
+      this.setColour(184)
       this.setTooltip('Manually pets all animals')
     }
   }
@@ -48,7 +48,7 @@ export function registerBlocks() {
       this.appendDummyInput().appendField('Take Profession')
       this.setPreviousStatement(true, null)
       this.setNextStatement(true, null)
-      this.setColour(160)
+      this.setColour(122)
       this.setTooltip('Take the correct profession (Coopmaster or Shepherd)')
     }
   }
@@ -58,7 +58,7 @@ export function registerBlocks() {
       this.appendDummyInput().appendField('Remove Profession')
       this.setPreviousStatement(true, null)
       this.setNextStatement(true, null)
-      this.setColour(160)
+      this.setColour(122)
       this.setTooltip('Take the wrong profession (not Coopmaster or Shepherd)')
     }
   }
@@ -68,7 +68,7 @@ export function registerBlocks() {
       this.appendDummyInput().appendField('Add Row')
       this.setPreviousStatement(true, null)
       this.setNextStatement(true, null)
-      this.setColour(160)
+      this.setColour('#666666')
       this.setTooltip('Adds a row to the table without sleeping')
     }
   }
@@ -81,7 +81,7 @@ export function registerBlocks() {
         .appendField('hay per animal')
       this.setPreviousStatement(true, null)
       this.setNextStatement(true, null)
-      this.setColour(160)
+      this.setColour(33)
       this.setTooltip('Adds N hay per animal')
     }
   }
@@ -97,7 +97,7 @@ export function registerBlocks() {
       this.appendStatementInput('DO').appendField('do')
       this.setPreviousStatement(true, null)
       this.setNextStatement(true, null)
-      this.setColour(120)
+      this.setColour(60)
       this.setTooltip('Repeats the contained actions for N days')
     }
   }
@@ -110,7 +110,7 @@ export function registerBlocks() {
       this.appendStatementInput('DO').appendField('do')
       this.setPreviousStatement(true, null)
       this.setNextStatement(true, null)
-      this.setColour(120)
+      this.setColour(269)
       this.setTooltip('Repeats until the total item count reaches the target')
     }
   }
