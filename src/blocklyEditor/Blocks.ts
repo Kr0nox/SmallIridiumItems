@@ -28,7 +28,7 @@ export function registerBlocks() {
       this.appendDummyInput().appendField('Sleep')
       this.setPreviousStatement(true, null)
       this.setNextStatement(true, null)
-      this.setColour(228)
+      this.setColour(210)
       this.setTooltip('Sleep')
     }
   }

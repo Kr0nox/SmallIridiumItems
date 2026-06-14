@@ -11,7 +11,7 @@
         </ButtonComponent>
 
         <div
-          class="group relative box-border w-28 rounded-md border-2 border-purple-600 bg-purple-200 hover:rounded-b-none hover:border-b-0"
+          class="group relative box-border w-40 rounded-md border-2 border-purple-600 bg-purple-200 hover:rounded-b-none hover:border-b-0"
         >
           <div class="px-1 py-0.5"><FontAwesomeIcon :icon="faPaste" /> Load Preset</div>
 
@@ -50,6 +50,8 @@ import replace7Strategy from '@/presets/replace7.json'
 import replace13Strategy from '@/presets/replace13.json'
 import replaceDailyStrategy from '@/presets/replaceDaily.json'
 import friendship488Preset from '@/presets/488friendship.json'
+import hay5Strategy from '@/presets/hay5.json'
+import hay7Strategy from '@/presets/hay7.json'
 
 const emit = defineEmits(['onChange'])
 
@@ -158,9 +160,11 @@ function saveFile(filename = 'smallIridium.json'): void {
 }
 
 const presets: Record<string, BlocklyJsonMock> = {
-  '1 day cycle': replaceDailyStrategy,
-  '7 day cycle': replace7Strategy,
-  '13 day cycle': replace13Strategy,
+  '1 day autopetter cycle': replaceDailyStrategy,
+  '7 day autopetter cycle': replace7Strategy,
+  '13 day autopetter cycle': replace13Strategy,
+  '5 day hay cycle': hay5Strategy,
+  '7 day hay cycle': hay7Strategy,
   '488 Friendship': friendship488Preset
 }
 

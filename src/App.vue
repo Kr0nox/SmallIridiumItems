@@ -14,8 +14,9 @@
     <footer class="w-full px-5 py-2 text-xs text-white">
       Writen by
       <a href="https://www.github.com/Kr0nox"><FontAwesomeIcon :icon="faGithub" />Kronox</a>,
-      <a href="https://github.com/Kr0nox/"><FontAwesomeIcon :icon="faGithub" />Source Code</a>. Many
-      of the graphics used are owned by
+      <a href="https://github.com/Kr0nox/SmallIridiumItems/"
+        ><FontAwesomeIcon :icon="faGithub" />Source Code</a
+      >. Many of the graphics used are owned by
       <a href="https://stardewvalleywiki.com/ConcernedApe">ConcernedApe</a> and imported from the
       <a href="https://stardewvalleywiki.com">Stardew Valley Wiki</a>.
     </footer>

@@ -1,0 +1,82 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "take_profession",
+        "id": "%SIdD6Bc81ohk|BT8Cj.",
+        "x": 66,
+        "y": 82,
+        "next": {
+          "block": {
+            "type": "add_hay",
+            "id": "83+jl{RJ^qr/+V467@$k",
+            "fields": {
+              "AMOUNT": 127
+            },
+            "next": {
+              "block": {
+                "type": "place_autopetter",
+                "id": "P5C+y?~(lK{PqR-bZ9Ko",
+                "next": {
+                  "block": {
+                    "type": "loop_repeat_n",
+                    "id": "UupAN#7NS-;7d.yqzfZ;",
+                    "fields": {
+                      "TIMES": 127
+                    },
+                    "inputs": {
+                      "DO": {
+                        "block": {
+                          "type": "sleep",
+                          "id": "hm4=`^+qOk7cEt1*oPlb"
+                        }
+                      }
+                    },
+                    "next": {
+                      "block": {
+                        "type": "loop_until_items",
+                        "id": "Df#[RoirKhmBRQbPbjbw",
+                        "fields": {
+                          "TARGET": 1998
+                        },
+                        "inputs": {
+                          "DO": {
+                            "block": {
+                              "type": "add_hay",
+                              "id": "tMWOZa#7~G}N!ZOqGl69",
+                              "fields": {
+                                "AMOUNT": 4
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "loop_repeat_n",
+                                  "id": "%8X2i6Yb4S7FO[O9BkJ2",
+                                  "fields": {
+                                    "TIMES": 5
+                                  },
+                                  "inputs": {
+                                    "DO": {
+                                      "block": {
+                                        "type": "sleep",
+                                        "id": "z~qIc17M^k$YVG_(b3ts"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}
