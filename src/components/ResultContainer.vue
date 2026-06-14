@@ -57,7 +57,7 @@ const averageChance = computed(() => {
 }
 
 .result-row span {
-  @apply block h-6 max-h-6 grow-0 border-r border-purple-300 px-1;
+  @apply block grow-0 border-r border-purple-300 px-1;
 }
 
 .result-row span:last-child {
@@ -65,14 +65,14 @@ const averageChance = computed(() => {
 }
 
 .result-row span:nth-child(1) {
-  @apply w-32;
+  @apply w-32 min-w-32;
 }
 
 .result-row span:nth-child(3),
 .result-row span:nth-child(4),
 .result-row span:nth-child(5),
 .result-row span:nth-child(7) {
-  @apply w-20;
+  @apply w-20 min-w-20;
 }
 
 .result-row span:nth-child(2) {
