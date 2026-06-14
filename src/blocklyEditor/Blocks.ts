@@ -63,6 +63,16 @@ export function registerBlocks() {
     }
   }
 
+  Blocks['add_row'] = {
+    init(this: Block) {
+      this.appendDummyInput().appendField('Add Row')
+      this.setPreviousStatement(true, null)
+      this.setNextStatement(true, null)
+      this.setColour(160)
+      this.setTooltip('Adds a row to the table without sleeping')
+    }
+  }
+
   Blocks['add_hay'] = {
     init(this: Block) {
       this.appendDummyInput()

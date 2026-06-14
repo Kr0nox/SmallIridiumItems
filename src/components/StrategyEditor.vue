@@ -11,17 +11,17 @@
         </ButtonComponent>
 
         <div
-          class="group relative box-border rounded-md border-2 border-purple-600 bg-purple-200 hover:rounded-b-none hover:border-b-0"
+          class="group relative box-border w-28 rounded-md border-2 border-purple-600 bg-purple-200 hover:rounded-b-none hover:border-b-0"
         >
           <div class="px-1 py-0.5"><FontAwesomeIcon :icon="faPaste" /> Load Preset</div>
 
           <div
-            class="absolute -right-0.5 -left-0.5 z-10 hidden flex-col rounded-b-md border-2 border-t-0 border-purple-600 bg-purple-200 group-hover:flex"
+            class="absolute -right-0.5 -left-0.5 z-10 hidden flex-col gap-1 rounded-b-md border-2 border-t-0 border-purple-600 bg-purple-200 group-hover:flex"
           >
             <div
               v-for="p in Object.keys(presets)"
               :key="p"
-              class="cursor-pointer pl-2"
+              class="cursor-pointer pl-2 whitespace-nowrap"
               @click="loadPreset(p)"
             >
               {{ p }}
@@ -69,6 +69,7 @@ const toolbox = {
     { kind: 'block', type: 'take_profession' },
     { kind: 'block', type: 'remove_profession' },
     { kind: 'block', type: 'sleep' },
+    { kind: 'block', type: 'add_row' },
     // Loops
     { kind: 'block', type: 'loop_repeat_n' },
     { kind: 'block', type: 'loop_until_items' }

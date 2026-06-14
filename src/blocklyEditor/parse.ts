@@ -57,6 +57,10 @@ function parseSingleNode(blocklyNode: MockBlock): Node {
       return {
         type: 'sleep'
       }
+    case 'add_row':
+      return {
+        type: 'addRow'
+      }
     /*case 'loop_repeat_n':
       return {
         type: 'repeat',

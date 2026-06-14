@@ -69,13 +69,25 @@ export function evaluate(strategy: Node, config: Config): Day[] {
         const itemChance = r.itemChance
         state = r.newState
         days.push({
-          day: days.length + 1,
+          day: (days[days.length - 1]?.day ?? 0) + 1,
           happiness: state.happiness,
           friendship: state.friendship,
           itemChance: itemChance,
           itemTotal:
             (days[days.length - 1]?.itemTotal ?? 0) +
             itemChance * config.animalCount * (config.animalCrackers ? 2 : 1),
+          autoPetterPlaced: state.autopetterPlaced,
+          hayRemaining: state.hayRemaining
+        })
+        break
+      }
+      case 'addRow': {
+        days.push({
+          day: days[days.length - 1]?.day ?? 0,
+          happiness: state.happiness,
+          friendship: state.friendship,
+          itemChance: getItemChance(state),
+          itemTotal: days[days.length - 1]?.itemTotal ?? 0,
           autoPetterPlaced: state.autopetterPlaced,
           hayRemaining: state.hayRemaining
         })

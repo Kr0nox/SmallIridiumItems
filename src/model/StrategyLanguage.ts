@@ -4,7 +4,13 @@ interface BaseNode<S extends string> {
 }
 
 type DoAction = BaseNode<
-  'placePetter' | 'removePetter' | 'pet' | 'sleep' | 'takeProfession' | 'removeProfession'
+  | 'placePetter'
+  | 'removePetter'
+  | 'pet'
+  | 'sleep'
+  | 'takeProfession'
+  | 'removeProfession'
+  | 'addRow'
 >
 
 export interface FeedAction extends BaseNode<'feed'> {
