@@ -41,13 +41,17 @@ const config = ref<Config>({
   initialFriendship: 0,
   initialHappiness: 0
 })
-const results = ref<Day[] | undefined>(undefined)
+const results = ref<Day[] | undefined | Error>(undefined)
 
 function run() {
   if (strategy.value.length != 1) return
   results.value = []
   nextTick(() => {
-    results.value = evaluate(strategy.value[0], config.value)
+    try {
+      results.value = evaluate(strategy.value[0], config.value)
+    } catch (e) {
+      results.value = e as Error
+    }
   })
 }
 </script>

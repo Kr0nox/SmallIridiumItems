@@ -33,14 +33,14 @@ export function evaluate(strategy: Node, config: Config): Day[] {
 
   let pointer: Node | undefined = strategy
   while (pointer) {
-    if (days.length > 100_000) {
-      throw 'Limit of 100,000 days reached'
+    if (days.length > 1_000_000) {
+      throw new Error('Limit of 1,000,000 days reached')
     }
     if (isLoopToken(pointer)) {
       let enterBody = false
       switch (pointer.type) {
         case 'itemLoop':
-          enterBody = days[days.length - 1].itemTotal < pointer.limit
+          enterBody = (days[days.length - 1]?.itemTotal ?? 0) < pointer.limit
           break
         case 'repeat':
           if (pointer.counter === undefined) {

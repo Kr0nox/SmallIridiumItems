@@ -1,6 +1,8 @@
 <template>
   <ContainerComponent>
-    <div v-if="results" class="flex h-full max-h-full w-full flex-col text-sm">
+    <div v-if="results === undefined">No Results yet</div>
+    <div v-else-if="results instanceof Error">{{ results.message }}</div>
+    <div v-else-if="resultArray(results)" class="flex h-full max-h-full w-full flex-col text-sm">
       <div class="result-row h-fit border-b border-purple-300">
         <span>Day ({{ results.length }} total)</span>
         <span>Item Chance (avg: {{ (averageChance * 100).toFixed(2) }}%)</span>
@@ -21,7 +23,6 @@
         />
       </div>
     </div>
-    <div v-else>No Results yet</div>
   </ContainerComponent>
 </template>
 
@@ -33,13 +34,17 @@ import { computed, type PropType } from 'vue'
 
 const props = defineProps({
   results: {
-    type: Object as PropType<Array<Day> | undefined>,
+    type: Object as PropType<Array<Day> | undefined | Error>,
     required: true
   }
 })
 
+function resultArray(a: Array<Day> | undefined | Error): a is Array<Day> {
+  return a !== undefined && !(a instanceof Error)
+}
+
 const averageChance = computed(() => {
-  if (!props.results) return 0
+  if (!resultArray(props.results)) return 0
   const sum = props.results.map((d) => d.itemChance).reduce((a, b) => a + b, 0)
   return sum / props.results.length
 })
