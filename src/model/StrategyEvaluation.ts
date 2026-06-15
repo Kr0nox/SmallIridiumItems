@@ -16,7 +16,7 @@ export interface Config {
   initialFriendship: number
   animalCount: number
   animalCrackers: boolean
-  animalType: 'Cow' | 'Chicken'
+  animalType: 'Cow' | 'Chicken' | 'Goat'
 }
 
 export function evaluate(strategy: Node, config: Config): Day[] {
@@ -231,6 +231,13 @@ function isLoopToken(n: Node): n is LoopNodes {
   return n.type == 'itemLoop' || n.type == 'repeat'
 }
 
-function getHappinessDrain(animalType: 'Cow' | 'Chicken') {
-  return animalType === 'Chicken' ? 7 : 6
+function getHappinessDrain(animalType: 'Cow' | 'Chicken' | 'Goat') {
+  switch (animalType) {
+    case 'Cow':
+      return 6
+    case 'Chicken':
+      return 7
+    case 'Goat':
+      return 5
+  }
 }

@@ -7,6 +7,7 @@
           <select v-model="model.animalType">
             <option value="Chicken" selected>Chicken</option>
             <option value="Cow">Cow</option>
+            <option value="Goat">Goat</option>
           </select>
         </span>
         <span>

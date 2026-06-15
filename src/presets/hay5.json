@@ -38,7 +38,7 @@
                         "type": "loop_until_items",
                         "id": "Df#[RoirKhmBRQbPbjbw",
                         "fields": {
-                          "TARGET": 1998
+                          "TARGET": 999
                         },
                         "inputs": {
                           "DO": {
