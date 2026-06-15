@@ -152,7 +152,10 @@ function dayUpdate(oldState: State, config: Config): { newState: State; itemChan
   // We expect the animal is home and doors are always closed
   newState.happiness = Math.min(255, newState.happiness + getHappinessDrain(config.animalType) * 2)
   if (!oldState.autoPetToday && !oldState.petManuallyToday) {
-    newState.friendship = Math.max(0, newState.friendship - (10 - newState.friendship / 200))
+    newState.friendship = Math.max(
+      0,
+      newState.friendship - (10 - Math.floor(newState.friendship / 200))
+    )
     newState.happiness = Math.max(0, newState.happiness - 50)
   }
 

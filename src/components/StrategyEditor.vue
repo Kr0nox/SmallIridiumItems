@@ -48,7 +48,6 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faFloppyDisk, faFolderOpen, faPaste } from '@fortawesome/free-solid-svg-icons'
 import replace7Strategy from '@/presets/replace7.json'
 import replace13Strategy from '@/presets/replace13.json'
-import replaceDailyStrategy from '@/presets/replaceDaily.json'
 import friendship488Preset from '@/presets/488friendship.json'
 import hay5Strategy from '@/presets/hay5.json'
 import hay7Strategy from '@/presets/hay7.json'
@@ -160,7 +159,7 @@ function saveFile(filename = 'smallIridium.json'): void {
 }
 
 const presets: Record<string, BlocklyJsonMock> = {
-  '1 day autopetter cycle': replaceDailyStrategy,
+  //'1 day autopetter cycle': replaceDailyStrategy,
   '7 day autopetter cycle': replace7Strategy,
   '13 day autopetter cycle': replace13Strategy,
   '5 day hay cycle': hay5Strategy,

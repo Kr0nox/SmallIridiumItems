@@ -12,8 +12,8 @@
     <span>{{ day.day }}</span>
     <span>{{ chance }}</span>
     <span>{{ total }}</span>
-    <span>{{ day.happiness.toFixed(0) }}</span>
-    <span>{{ day.friendship.toFixed(0) }}</span>
+    <span>{{ day.happiness }}</span>
+    <span>{{ day.friendship }}</span>
     <span>{{ day.hayRemaining }}</span>
     <span>
       <span v-if="autoPetterBehavior == 'place'">Place</span>
